@@ -12,3 +12,10 @@ int main() {
     double c, d;
     std::cin >> c >> d;
 
+// Перемножение пар чисел
+    double result1 = a * c;
+    double result2 = b * d;
+
+// Вывод результата
+    std::cout << "Результат умножения: " << result1 << " " << result2 << std::endl;
+
