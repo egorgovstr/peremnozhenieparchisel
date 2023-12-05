@@ -18,3 +18,12 @@ int main() {
         pairs.push_back(std::make_pair(num1, num2));
     }
 
+    // Перемножение пар чисел
+    std::cout << "Результат перемножения пар чисел:\n";
+    for (const auto& pair : pairs) {
+        int result = pair.first * pair.second;
+        std::cout << pair.first << " * " << pair.second << " = " << result << "\n";
+    }
+
+    return 0;
+}
