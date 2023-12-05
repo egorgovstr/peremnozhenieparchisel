@@ -22,12 +22,14 @@ int main() {
     int resultX = 1;
     int resultY = 1;
 
-    // Перемножение пар чисел
-    std::cout << "Результат перемножения пар чисел:\n";
+    // Перемножение всех пар чисел
     for (const auto& pair : pairs) {
-        int result = pair.first * pair.second;
-        std::cout << pair.first << " * " << pair.second << " = " << result << "\n";
+        resultX *= pair.first;
+        resultY *= pair.second;
     }
+
+    // Вывод результата
+    std::cout << "Результат перемножения: (" << resultX << ", " << resultY << ")\n";
 
     return 0;
 }
