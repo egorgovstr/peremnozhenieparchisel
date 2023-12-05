@@ -11,12 +11,16 @@ int main() {
     std::vector<std::pair<int, int>> pairs;
 
     // Ввод пар чисел от пользователя
-    for (int i = 0; i < numPairs; ++i) {
-        int num1, num2;
-        std::cout << "Введите первое и второе число для пары " << i + 1 << ": ";
-        std::cin >> num1 >> num2;
-        pairs.push_back(std::make_pair(num1, num2));
+    for (int i = 0; i < n; ++i) {
+        int x, y;
+        std::cout << "Введите " << i + 1 << "-ую пару чисел: ";
+        std::cin >> x >> y;
+        pairs.push_back(std::make_pair(x, y));
     }
+
+    // Инициализация результатов перемножения
+    int resultX = 1;
+    int resultY = 1;
 
     // Перемножение пар чисел
     std::cout << "Результат перемножения пар чисел:\n";
