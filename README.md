@@ -1,22 +1,20 @@
 #include <iostream>
+#include <vector>
 
 int main() {
-    // Ввод первой пары чисел
-    std::cout << "Введите первую пару чисел (через пробел): ";
-    double a, b;
-    std::cin >> a >> b;
+    // Запрос у пользователя количества пар чисел
+    std::cout << "Введите количество пар чисел: ";
+    int numPairs;
+    std::cin >> numPairs;
 
-    // Ввод второй пары чисел
-    std::cout << "Введите вторую пару чисел (через пробел): ";
-    double c, d;
-    std::cin >> c >> d;
+    // Вектор для хранения чисел
+    (написать)
 
-    // Перемножение пар чисел
-    double result1 = a * c;
-    double result2 = b * d;
+    // Ввод пар чисел от пользователя
+    for (int i = 0; i < numPairs; ++i) {
+        int num1, num2;
+        std::cout << "Введите первое и второе число для пары " << i + 1 << ": ";
+        std::cin >> num1 >> num2;
+        pairs.push_back(std::make_pair(num1, num2));
+    }
 
-    // Вывод результата
-    std::cout << "Результат умножения: " << result1 << " " << result2 << std::endl;
-
-    return 0;
-}
