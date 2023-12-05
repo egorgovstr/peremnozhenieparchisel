@@ -8,7 +8,7 @@ int main() {
     std::cin >> numPairs;
 
     // Вектор для хранения чисел
-    (написать)
+    std::vector<std::pair<int, int>> pairs;
 
     // Ввод пар чисел от пользователя
     for (int i = 0; i < numPairs; ++i) {
