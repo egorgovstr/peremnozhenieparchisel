@@ -1,35 +1,12 @@
 #include <iostream>
+#include <sstream>
+#include <string>
 #include <vector>
 
-int main() {
-    // Запрос количества пар чисел у пользователя
-    std::cout << "Введите количество пар чисел: ";
-    int n;
-    std::cin >> n;
+using namespace std;
 
-    // Вектор для хранения пар чисел
-    std::vector<std::pair<int, int>> pairs;
-
-    // Ввод пар чисел от пользователя
-    for (int i = 0; i < n; ++i) {
-        int x, y;
-        std::cout << "Введите " << i + 1 << "-ую пару чисел: ";
-        std::cin >> x >> y;
-        pairs.push_back(std::make_pair(x, y));
-    }
-
-    // Инициализация результатов перемножения
-    int resultX = 1;
-    int resultY = 1;
-
-    // Перемножение всех пар чисел
-    for (const auto& pair : pairs) {
-        resultX *= pair.first;
-        resultY *= pair.second;
-    }
-
-    // Вывод результата
-    std::cout << "Результат перемножения: (" << resultX << ", " << resultY << ")\n";
-
-    return 0;
-}
+// Функция для перемножения пар чисел
+string multiplyPair(const string& num1, const string& num2) {
+    // Проверка наличия второго числа в паре
+    if (num2 == "")
+        return "0";
