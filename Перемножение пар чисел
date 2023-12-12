@@ -10,3 +10,17 @@ string multiplyPair(const string& num1, const string& num2) {
     // Проверка наличия второго числа в паре
     if (num2 == "")
         return "0";
+    
+    // Проверка наличия символа в числе
+    if (num1.find_first_of("abcdefghijklmnopqrstuvwxyz") != string::npos ||
+        num2.find_first_of("abcdefghijklmnopqrstuvwxyz") != string::npos) {
+        return num1 + num2;
+    }
+    
+    // Выполнение перемножения чисел
+    int n1 = stoi(num1);
+    int n2 = stoi(num2);
+    int result = n1 * n2;
+    
+    return to_string(result);
+}
