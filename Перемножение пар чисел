@@ -24,3 +24,25 @@ string multiplyPair(const string& num1, const string& num2) {
     
     return to_string(result);
 }
+
+int main() {
+    string input;
+    cout << "Введите пары чисел и символов: ";
+    getline(cin, input);
+    
+    // Разделение ввода на пары
+    istringstream iss(input);
+    vector<string> pairs;
+    string pair;
+    while (iss >> pair) {
+        pairs.push_back(pair);
+    }
+    
+    // Перемножение пар и вывод результата
+    for (int i = 0; i < pairs.size(); i += 2) {
+        string result = multiplyPair(pairs[i], pairs[i+1]);
+        cout << result << ", ";
+    }
+
+    return 0;
+}
