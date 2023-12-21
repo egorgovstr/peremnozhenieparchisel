@@ -2,53 +2,42 @@
 #include <sstream>
 #include <string>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
-
 // Функция для перемножения пар чисел
 string multiplyPair(const string& num1, const string& num2) {
     // Проверка наличия второго числа в паре
     if (num2 == "")
         return "0";
-    
-    // Проверка наличия символа в числе
-    if (num1.find_first_of("abcdefghijklmnopqrstuvwxyz") != string::npos ||
-        num2.find_first_of("abcdefghijklmnopqrstuvwxyz") != string::npos) {
-        return num1 + num2;
-    }
-    
     // Выполнение перемножения чисел
     int n1 = stoi(num1);
     int n2 = stoi(num2);
     int result = n1 * n2;
-    
     return to_string(result);
 }
-
 int main() {
+    setlocale(LC_ALL, "RUS");
     string input;
-    cout << "Введите пары чисел и символов: ";
+    cout << "Enter pairs of numbers and symbols: ";
     getline(cin, input);
-    
     // Разделение ввода на пары
     istringstream iss(input);
-    vector<string> pairs;
-    string pair;
-    while (iss >> pair) {
-        pairs.push_back(pair);
+    string token;
+    vector<int> pairs;
+    while (getline(iss, token, ' ')) {
+        if (all_of(token.begin(), token.end(), ::isdigit)) {
+            pairs.push_back(stoi(token));
+        }
     }
-    
     // Перемножение пар и вывод результата
     for (int i = 0; i < pairs.size(); i += 2) {
         // Проверка наличия достаточного кол-ва элементов в pairs
         if (i + 1 >= pairs.size()) {
-            cout << "Недостаточно элементов для образования пары." << endl;
+            cout << "There are not enough elements to form a pair." << endl;
             continue;
         }
-        
-        string result = multiplyPair(pairs[i], pairs[i+1]);
+        string result = multiplyPair(to_string(pairs[i]), to_string(pairs[i+1]));
         cout << result << ", ";
     }
-
     return 0;
 }
